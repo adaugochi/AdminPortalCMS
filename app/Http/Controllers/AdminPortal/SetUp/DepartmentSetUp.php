@@ -5,8 +5,8 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 use AdminPortal\SetUp\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Department;
-use App\Models\Member;
+use App\Department;
+use App\Member;
 
 class DepartmentSetUp extends Controller
 {

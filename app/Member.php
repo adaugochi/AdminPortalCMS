@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,12 +12,12 @@ class Member extends Model
 
     public function group()
     {
-        return $this->belongsTo('App\Models\Group');
+        return $this->belongsTo('App\Group');
     }
 
     public function offering()
     {
-        return $this->hasMany('App\Models\Offering');
+        return $this->hasMany('App\Offering');
     }
 }
 

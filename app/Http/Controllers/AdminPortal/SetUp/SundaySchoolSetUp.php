@@ -4,7 +4,7 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\SundaySchool;
+use App\SundaySchool;
 
 class SundaySchoolSetUp extends Controller
 {

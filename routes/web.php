@@ -12,81 +12,75 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('admin',           'AdminController@login');
-Route::get('forgot-password', 'AdminController@forgetpassword');
-Route::post('admin',          'AdminController@login');
-Route::get('/dashboard',      'AdminController@index');
-
-Route::group(['namespace' => 'AdminPortal\Setup'], function () {
-	//retriving
-	Route::get('departments',            'DepartmentSetUp@getDepartments');
-	Route::get('groups',                 'GroupSetUp@getGroups');
-	Route::get('events',                 'EventSetUp@getEvents');
-	Route::get('sunschs',                'SundaySchoolSetUp@getSunSchs');
-	Route::get('announcements',          'AnnouncementSetUp@getAnnouncements');
-	Route::get('visitors',               'VisitorSetUp@getVisitors');
-	Route::get('members',                'MemberSetUp@getMembers');
-	Route::get('offerings',              'OfferingSetUp@getOfferings');
-	Route::get('tithes',                 'TitheSetUp@getTithes');
-	Route::get('givings',                 'GivingSetUp@getGivings');
-	Route::get('weekly-acts',            'WeeklyActivitySetUp@getWeeklyActs');
-
-	//creating
-	Route::post('addDepartment',         'DepartmentSetUp@addDepartment');
-	Route::post('addGroup',              'GroupSetUp@addGroup');
-	Route::post('addEvent',              'EventSetUp@addEvent');
-	Route::post('addSundaySchool',       'SundaySchoolSetUp@addSunSch');
-	Route::post('addAnnouncement',       'AnnouncementSetUp@addAnnouncement');
-	Route::post('addVisitor',            'VisitorSetUp@addVisitor');
-	Route::post('addMember',             'MemberSetUp@addMember');
-	Route::post('addOffering',           'OfferingSetUp@addOffering');
-	Route::post('addTithe',             'TitheSetUp@addTithe');
-	Route::post('addGiving',             'GivingSetUp@addGiving');
-	Route::post('addWkAct',              'WeeklyActivitySetUp@addWkAct');
-
-	//updating
-	Route::post('department',           'DepartmentSetUp@updateDepartment');
-	Route::post('group',                'GroupSetUp@updateGroup');
-	Route::post('event',                'EventSetUp@updateEvent');
-	Route::post('sunsch',               'SundaySchoolSetUp@updateSunSch');
-	Route::post('announcement',         'AnnouncementSetUp@updateAnnounce');
-	Route::post('visitor',              'VisitorSetUp@updateVisitor');
-	Route::post('member',               'MemberSetUp@updateMember');
-	Route::post('offering',             'OfferingSetUp@updateOffering');
-	Route::post('tithe',                'TitheSetUp@updateTithe');
-	Route::post('giving',               'GivingSetUp@updateGiving');
-	Route::post('weekly-act',           'WeeklyActivitySetUp@updateWkAct');
-
-	//deleting
-	Route::post('del-department',       'DepartmentSetUp@deleteDepartment');
-	Route::post('del-group',            'GroupSetUp@deleteGroup');
-	Route::post('del-event',            'EventSetUp@deleteEvent');
-	Route::post('del-sunsch',           'SundaySchoolSetUp@deleteSunSch');
-	Route::post('del-announce',         'AnnouncementSetUp@deleteAnnounce');
-	Route::post('del-visitor',          'VisitorSetUp@deleteVisitor');
-	Route::post('del-member',           'MemberSetUp@deleteMember');
-	Route::post('del-offering',         'OfferingSetUp@deleteOffering');
-	Route::post('del-tithe',            'TitheSetUp@deleteTithe');
-	Route::post('del-giving',           'GivingSetUp@deleteGiving');
-	Route::post('del-weeklyact',        'WeeklyActivitySetUp@deleteWkAct');
-
-	Route::get('members/{id}',          'GroupSetUp@showMember');
-	Route::get('members/{id}',          'DepartmentSetUp@showDepartment');
-});
+	Route::get('forgot-password',     'AdminController@forgetpassword');
+	Route::post('admin',              'AdminController@login');
+	Route::get('admin',               'AdminController@login');
+	Route::get('dashboard',           'AdminController@index');
 
 
+	//retrive
+	Route::get('departments',            'AdminPortal\Setup\DepartmentSetUp@getDepartments');
+	Route::get('groups',                 'AdminPortal\Setup\GroupSetUp@getGroups');
+	Route::get('events',                 'AdminPortal\Setup\EventSetUp@getEvents');
+	Route::get('sunschs',                'AdminPortal\Setup\SundaySchoolSetUp@getSunSchs');
+	Route::get('announcements',          'AdminPortal\Setup\AnnouncementSetUp@getAnnouncements');
+	Route::get('visitors',               'AdminPortal\Setup\VisitorSetUp@getVisitors');
+	Route::get('members',                'AdminPortal\Setup\MemberSetUp@getMembers');
+	Route::get('offerings',              'AdminPortal\Setup\OfferingSetUp@getOfferings');
+	Route::get('tithes',                 'AdminPortal\Setup\TitheSetUp@getTithes');
+	Route::get('givings',                'AdminPortal\Setup\GivingSetUp@getGivings');
+	Route::get('weekly-acts',            'AdminPortal\Setup\WeeklyActivitySetUp@getWeeklyActs');
 
+	//create
+	Route::post('addDepartment',         'AdminPortal\Setup\DepartmentSetUp@addDepartment');
+	Route::post('addGroup',              'AdminPortal\Setup\GroupSetUp@addGroup');
+	Route::post('addEvent',              'AdminPortal\Setup\EventSetUp@addEvent');
+	Route::post('addSundaySchool',       'AdminPortal\Setup\SundaySchoolSetUp@addSunSch');
+	Route::post('addAnnouncement',       'AdminPortal\Setup\AnnouncementSetUp@addAnnouncement');
+	Route::post('addVisitor',            'AdminPortal\Setup\VisitorSetUp@addVisitor');
+	Route::post('addMember',             'AdminPortal\Setup\MemberSetUp@addMember');
+	Route::post('addOffering',           'AdminPortal\Setup\OfferingSetUp@addOffering');
+	Route::post('addTithe',              'AdminPortal\Setup\TitheSetUp@addTithe');
+	Route::post('addGiving',             'AdminPortal\Setup\GivingSetUp@addGiving');
+	Route::post('addWkAct',              'AdminPortal\Setup\WeeklyActivitySetUp@addWkAct');
 
+	//update
+	Route::post('department',           'AdminPortal\Setup\DepartmentSetUp@updateDepartment');
+	Route::post('group',                'AdminPortal\Setup\GroupSetUp@updateGroup');
+	Route::post('event',                'AdminPortal\Setup\EventSetUp@updateEvent');
+	Route::post('sunsch',               'AdminPortal\Setup\SundaySchoolSetUp@updateSunSch');
+	Route::post('announcement',         'AdminPortal\Setup\AnnouncementSetUp@updateAnnounce');
+	Route::post('visitor',              'AdminPortal\Setup\VisitorSetUp@updateVisitor');
+	Route::post('member',               'AdminPortal\Setup\MemberSetUp@updateMember');
+	Route::post('offering',             'AdminPortal\Setup\OfferingSetUp@updateOffering');
+	Route::post('tithe',                'AdminPortal\Setup\TitheSetUp@updateTithe');
+	Route::post('giving',               'AdminPortal\Setup\GivingSetUp@updateGiving');
+	Route::post('weekly-act',           'AdminPortal\Setup\WeeklyActivitySetUp@updateWkAct');
 
-Route::get('admin/create', 'AdminPortal\Setup\DepartmentSetUp@index');
-Route::post('addDepartment', 'AdminPortal\Setup\DepartmentSetUp@addDepartment');
+	//delete
+	Route::post('del-department',       'AdminPortal\Setup\DepartmentSetUp@deleteDepartment');
+	Route::post('del-group',            'AdminPortal\Setup\GroupSetUp@deleteGroup');
+	Route::post('del-event',            'AdminPortal\Setup\EventSetUp@deleteEvent');
+	Route::post('del-sunsch',           'AdminPortal\Setup\SundaySchoolSetUp@deleteSunSch');
+	Route::post('del-announce',         'AdminPortal\Setup\AnnouncementSetUp@deleteAnnounce');
+	Route::post('del-visitor',          'AdminPortal\Setup\VisitorSetUp@deleteVisitor');
+	Route::post('del-member',           'AdminPortal\Setup\MemberSetUp@deleteMember');
+	Route::post('del-offering',         'AdminPortal\Setup\OfferingSetUp@deleteOffering');
+	Route::post('del-tithe',            'AdminPortal\Setup\TitheSetUp@deleteTithe');
+	Route::post('del-giving',           'AdminPortal\Setup\GivingSetUp@deleteGiving');
+	Route::post('del-weeklyact',        'AdminPortal\Setup\WeeklyActivitySetUp@deleteWkAct');
+
+	//show
+	Route::get('members/{id}',          'AdminPortal\Setup\GroupSetUp@showMember');
+	Route::get('members/{id}',          'AdminPortal\Setup\DepartmentSetUp@showDepartment');
+
 
 
 

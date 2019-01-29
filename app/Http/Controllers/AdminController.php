@@ -4,20 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Member;
+use App\Department;
+use App\Group;
 
 class AdminController extends Controller
 {
     public function login(Request $request)
     {
+        $members = Member::all();
+        $depts   = Department::all();
+        $groups  = Group::all();
+
+        $count_member   = count($members);
+        $count_dept     = count($depts);
+        $count_group    = count($groups);
+
     	if ($request->isMethod('post')) {
     		$data = $request->input();
     		if (Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'admin' => '1'])) {
-    			return view('dashboard');
+
+    			return view('dashboard', compact('count_member', 'count_dept', 'count_group'));
+                
     		} else {
-    			echo "failed"; die;
+    			return view('login');
     		}
     	}
-    	return view('login');
+    	return view('dashboard');
     }
 
     public function forgetpassword()
@@ -27,6 +40,14 @@ class AdminController extends Controller
 
     public function index()
     {
-    	return view('dashboard');
+        $members = Member::all();
+        $depts   = Department::all();
+        $groups  = Group::all();
+
+        $count_member   = count($members);
+        $count_dept     = count($depts);
+        $count_group    = count($groups);
+
+        return view('dashboard', compact('count_member', 'count_dept', 'count_group'));
     }
 }

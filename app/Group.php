@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class Group extends Model
 
     public function members()
     {
-        return $this->hasMany('App\Models\Member');
+        return $this->hasMany('App\Member');
     }
 }

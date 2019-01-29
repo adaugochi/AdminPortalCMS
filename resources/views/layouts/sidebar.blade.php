@@ -1,15 +1,15 @@
 
 <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/dashboard">
+      <ul class="sidebar navbar-nav" id="ul">
+        <li class="nav-item" id="li">
+          <a class="nav-link" href="/dashboard" id="a">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span><small>Dashboard</small></span>
           </a>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="/events">
+        <li class="nav-item" id="li">
+          <a class="nav-link" href="/events" id="a">
             <i class="fas fa-fw fa-folder"></i>
             <span><small>Event</small></span>
           </a>

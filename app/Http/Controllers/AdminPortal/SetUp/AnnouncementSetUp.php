@@ -4,7 +4,7 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Announcement;
+use App\Announcement;
 
 class AnnouncementSetUp extends Controller
 {

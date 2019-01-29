@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Forgot Password</title>
+    <title> Forgot Password</title>
 
     <!-- Bootstrap core CSS-->
     <link href="{{ asset('css/backend_css/bootstrap_css/bootstrap.min.css') }}" rel="stylesheet">

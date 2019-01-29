@@ -150,22 +150,20 @@
     });
 
     //edit modal for giving table
-    $('#modal-editgiving').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget)
-        var id     = button.data('id')
-        var item   = button.data('item')
-        var amount = button.data('amount')
-        var pdate  = button.data('pdate')
-        var tcode  = button.data('tcode')
-        var mcode  = button.data('mcode')
+    $('#modal-editgiving').on('show.bs.modal',function (e) {
+        var id = $(e.relatedTarget).data('id');
+        var item = $(e.relatedTarget).data('item');
+        var amount = $(e.relatedTarget).data('amount');
+        var tcode = $(e.relatedTarget).data('tcode');
+        var pdate = $(e.relatedTarget).data('pdate');
+        var mcode = $(e.relatedTarget).data('mcode');
 
-        var modal = $(this)
-        modal.find('.modal-body #id').val(id)
-        modal.find('.modal-body #amount').val(amount)
-        modal.find('.modal-body #pdate').val(pdate)
-        modal.find('.modal-body #tcode').val(tcode)
-        modal.find('.modal-body #mcode').val(mcode)
-        modal.find('.modal-body #item').val(items)
+        $(e.currentTarget).find('input[id="id"]').val(id);
+        $(e.currentTarget).find('input[id="item"]').val(item);
+        $(e.currentTarget).find('input[id="amount"]').val(amount);
+        $(e.currentTarget).find('input[id="tcode"]').val(tcode);
+        $(e.currentTarget).find('input[id="pdate"]').val(pdate);
+        $(e.currentTarget).find('input[id="mcode"]').val(mcode);
     });
 
     //edit modal for member table
@@ -185,7 +183,6 @@
         modal.find('.modal-body #fname').val(fname)
         modal.find('.modal-body #lname').val(lname)
         modal.find('.modal-body #gender').val(gender)
-        modal.find('.modal-body #code').val(code)
         modal.find('.modal-body #age').val(age)
         modal.find('.modal-body #address').val(address)
         modal.find('.modal-body #email').val(email)

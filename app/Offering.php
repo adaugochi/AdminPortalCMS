@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +11,6 @@ class Offering extends Model
 
     public function member()
     {
-        return $this->belongsTo('App\Models\Member');
+        return $this->belongsTo('App\Member');
     }
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\WeeklyActivity;
+use App\WeeklyActivity;
 
 class WeeklyActivitySetUp extends Controller
 {

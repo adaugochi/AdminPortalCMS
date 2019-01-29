@@ -4,8 +4,8 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Offering;
-use App\Models\Member;
+use App\Offering;
+use App\Member;
 
 class OfferingSetUp extends Controller
 {

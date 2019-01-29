@@ -4,8 +4,8 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Tithe;
-use App\Models\Member;
+use App\Tithe;
+use App\Member;
 
 class TitheSetUp extends Controller
 {

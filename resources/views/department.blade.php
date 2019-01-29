@@ -11,13 +11,23 @@
 	            </li>
 	            <li class="breadcrumb-item active">department</li>
 	        </ol>
+	        @if(session()->has('success'))
+	    		<div class="row">
+	    			<div class="col-md-4">
+					    <div class="alert alert-success">
+					        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+					        <small>{{ session()->get('success') }} </small>
+					    </div>
+					</div>
+				</div>
+			@endif
 
 	        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-department" style="float: right;">
 	        	<i class="fas fa-plus"></i> New Department
 	        </button>
 	        @include('Modals.departmentmodal')
 	    
-	    <br><br>
+	    	<br><br>
 	        <div class="card">
 	            <div class="card-body" style="">
 	                <div class="table-responsive">

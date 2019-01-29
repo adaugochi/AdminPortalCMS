@@ -4,9 +4,9 @@ namespace App\Http\Controllers\AdminPortal\SetUp;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Member;
-use App\Models\Group;
-use App\Models\Department;
+use App\Member;
+use App\Group;
+use App\Department;
 
 class MemberSetUp extends Controller
 {

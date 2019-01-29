@@ -15,8 +15,18 @@
 	        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-event" style="float: right;">
 	        	<i class="fas fa-plus"></i> New Event
 	        </button>
-	    
-	    <br><br>
+	    	@if(session()->has('success'))
+	    		<div class="row">
+	    			<div class="col-md-4">
+					    <div class="alert alert-success">
+					        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+					        <small>{{ session()->get('success') }} </small>
+					    </div>
+					</div>
+				</div>
+			@endif
+			
+	    	<br><br>
 	        <div class="card">
 	            <div class="card-body" style="">
 	                <div class="table-responsive">
