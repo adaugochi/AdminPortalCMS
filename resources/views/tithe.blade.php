@@ -66,11 +66,38 @@
 				                    </td>
 				                    <td>
 				                        <button type="button" class="btn btn-sm btn-outline-danger" 
-				                                data-id="{{ $tithe->id }}" 
 				                                data-toggle="modal" 
-				                                data-target="#modal-del">
+				                                data-target="#modaldel_{{ $tithe->id }}">
 				                        	Delete
 				                        </button>
+				                        <!--Delete Modal -->
+										<div class="modal fade" id="modaldel_{{ $tithe->id }}" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+										    <div class="modal-dialog modal-sm">
+										    
+										      <!-- Modal content-->
+											    <div class="modal-content">
+											        <div class="modal-header bg-info">
+											            <button type="button" class="close" data-dismiss="modal">&times;</button> 
+											        </div>
+											        <div class="modal-body">
+											            <form method="POST" action="{{ url('del-tithe') }}" enctype="multipart/form-data" id="deltithe">
+											      
+											              {{ csrf_field() }}
+												            <div class="form-group">
+												                <input type="hidden" id="id" value="{{ $tithe->id }}" name="id">    
+												            </div>
+												            <i class="fas fa-question-circle" style="font-size: 40px;"></i>
+												            <p class="text-center" >
+												            	Are you sure you want to delete <span><b>{{ $tithe->amount }} ?</b></span>
+												            </p>
+												            <button type="submit" class="btn btn-info"> 
+												                 Yes, Delete
+												            </button>
+											            </form>
+											        </div>
+											    </div>
+										    </div>
+										</div>
 				                    </td>
 				                </tr>
 				                @endforeach

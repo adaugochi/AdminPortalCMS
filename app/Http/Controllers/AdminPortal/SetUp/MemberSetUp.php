@@ -84,9 +84,9 @@ class MemberSetUp extends Controller
 
     public function deleteMember (Request $request)
     {
-        //dd($request->all());
-        $group = Member::find($request->id);
-        $group->delete();
+        
+        $member = Member::find($request->id);
+        $member->delete();
 
         return back(); 
     }

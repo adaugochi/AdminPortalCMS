@@ -1,12 +1,3 @@
-    //delete modal
-    $('#modal-del').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget)
-        var id     = button.data('id')
-
-        var modal = $(this)
-        modal.find('.modal-body #id').val(id)
-    });
-
     //edit modals
     $('#modal-editdept').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)

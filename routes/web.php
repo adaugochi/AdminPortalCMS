@@ -79,6 +79,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 	//show
 	Route::get('members/{id}',          'AdminPortal\Setup\GroupSetUp@showMember');
+	Route::get('members/{id}',          'AdminPortal\Setup\GroupSetUp@edit');
 	Route::get('members/{id}',          'AdminPortal\Setup\DepartmentSetUp@showDepartment');
 
 
