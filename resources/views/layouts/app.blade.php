@@ -4,41 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <!-- <title>{{ config('app.name') }}</title>
 
-    <!-- Scripts -->
+   
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
+    
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
+
+    <!-- Bootstrap core CSS-->
+    <link href="{{ asset('css/backend_css/bootstrap_css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="{{ asset('fonts/backend_font/css/all.min.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="{{ asset('css/backend_css/sb-admin.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-dark">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <!-- <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
+                    
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -70,11 +65,17 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap_js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ asset('js/jquery-easing/jquery.easing.min.js') }}"></script>
 </body>
 </html>

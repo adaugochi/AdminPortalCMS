@@ -25,19 +25,19 @@
   <body class="bg-dark">
 
     <div class="container">
-      <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+      <div class="card card-login mx-auto mt-5" style="border-radius: 0px;">
+        <div class="card-header bg-info"><b style="color: white;">Login</b></div>
         <div class="card-body">
-          <form method="post" action="{{ url('admin') }}">{{ csrf_field() }}
+          <form method="post" action="{{ url('dashboard') }}">{{ csrf_field() }}
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="email">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="email" style="border-radius: 0px;">
                 <label for="inputEmail">Email address</label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" name="password">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" name="password" style="border-radius: 0px;">
                 <label for="inputPassword">Password</label>
               </div>
             </div>
@@ -49,11 +49,18 @@
                 </label>
               </div>
             </div>
-            <input type="submit" class="btn btn-primary btn-block" value="Login"/>
+            <input type="submit" class="btn btn-info btn-block" value="Login"/>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="/register">Register an Account</a>
-            <a class="d-block small" href="/forgot-password">Forgot Password?</a>
+            @if (Route::has('register'))
+              <a class="d-block small mt-3" href="{{ route('register') }}">{{ __('Register an Account') }}</a>
+            @endif
+            
+            @if (Route::has('password.request'))
+              <a class="d-block small" href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+              </a>
+            @endif
           </div>
         </div>
       </div>

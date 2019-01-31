@@ -17,11 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
-	Route::get('forgot-password',     'AdminController@forgetpassword');
-	Route::post('admin',              'AdminController@login');
-	Route::get('admin',               'AdminController@login');
+	Route::post('dashboard',          'AdminController@login');
 	Route::get('dashboard',           'AdminController@index');
 
 
@@ -79,7 +77,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 	//show
 	Route::get('members/{id}',          'AdminPortal\Setup\GroupSetUp@showMember');
-	Route::get('members/{id}',          'AdminPortal\Setup\GroupSetUp@edit');
+
 	Route::get('members/{id}',          'AdminPortal\Setup\DepartmentSetUp@showDepartment');
 
 

@@ -33,11 +33,6 @@ class AdminController extends Controller
     	return view('dashboard');
     }
 
-    public function forgetpassword()
-    {
-    	return view('forgot-password');
-    }
-
     public function index()
     {
         $members = Member::all();
